@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RootNamespace>DistribuicaoLucro.Service</RootNamespace>
+    <AssemblyName>DistribuicaoLucro.Service</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\distribuicao-lucro-repository\DistribuicaoLucro.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
