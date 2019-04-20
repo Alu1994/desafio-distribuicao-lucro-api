@@ -28,9 +28,7 @@
 
   <ItemGroup>
     <Folder Include="coverage\" />
-    <Folder Include="CrossCutting\" />
-    <Folder Include="Service\" />
-    <Folder Include="Repository\" />
+    <Folder Include="CrossCutting\ValueObject\" />
   </ItemGroup>
 
 </Project>
