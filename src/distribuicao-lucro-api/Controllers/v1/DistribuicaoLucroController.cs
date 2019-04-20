@@ -3,6 +3,8 @@ using DistribuicaoLucro.CrossCutting;
 using DistribuicaoLucro.Service.CalculoDistribuicaoLucro;
 using DistribuicaoLucro.CrossCutting.ValueObject;
 using Microsoft.AspNetCore.Mvc;
+using DistribuicaoLucro.CrossCutting.Infra;
+using System.Net;
 
 namespace DistribuicaoLucro.Api.Controllers
 {
@@ -18,20 +20,30 @@ namespace DistribuicaoLucro.Api.Controllers
             _calculoDistribuicaoLucro = calculoDistribuicaoLucro;
         }
 
+        /// <response code="200">Ok</response>
+        /// <response code="400">Bad Request</response>
         [HttpGet("{valorTotalDisponibilizado}")]
-        public ActionResult<RetornoCalculoParticipacaoLucroColaboradores> Get(double valorTotalDisponibilizado)
+        [Produces("application/json", "application/xml")]
+        public ActionResult<RetornoApi<RetornoCalculoParticipacaoLucroColaboradores>> Get(double valorTotalDisponibilizado)
         {
-            var colaborador = new Colaborador
+            var retornoApi = new RetornoApi<RetornoCalculoParticipacaoLucroColaboradores>();
+            try
             {
-                matricula = "0005253",
-                nome = "Wong Austin",
-                area = "Financeiro",
-                cargo = "Economista Júnior",
-                salarioBruto = 2215.04,
-                dataAdmissao = Convert.ToDateTime("2016-08-27")
-            };
-
-            return _calculoDistribuicaoLucro.CalcularParticipacaoLucroColaboradores(valorTotalDisponibilizado);
+                retornoApi.Retorno = _calculoDistribuicaoLucro.CalcularParticipacaoLucroColaboradores(valorTotalDisponibilizado);
+                retornoApi.Message = "Dados Gerados com sucesso!";
+                retornoApi.HttpStatus = HttpStatusCode.OK;
+                if(this.HttpContext != null)
+                    this.HttpContext.Response.StatusCode = (int)HttpStatusCode.OK;
+            }
+            catch(Exception ex)
+            {
+                retornoApi.Retorno = null;
+                retornoApi.Message = $"Message: {ex.Message} {Environment.NewLine} {ex.StackTrace} {Environment.NewLine} {ex.InnerException}";
+                retornoApi.HttpStatus = HttpStatusCode.BadRequest;
+                if (this.HttpContext != null)
+                    this.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            }
+            return retornoApi;
         }
     }
 }

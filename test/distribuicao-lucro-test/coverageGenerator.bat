@@ -1,0 +1,1 @@
+dotnet test DistribuicaoLucro.Test.csproj -c Release --no-restore --collect "Code Coverage" --logger trx --results-directory coverage

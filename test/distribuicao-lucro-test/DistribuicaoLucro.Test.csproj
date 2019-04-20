@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="olacov\**" />
+    <EmbeddedResource Remove="olacov\**" />
+    <None Remove="olacov\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="Moq" Version="4.10.1" />
+    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\distribuicao-lucro-api\DistribuicaoLucro.Api.csproj" />
+    <ProjectReference Include="..\..\src\distribuicao-lucro-crosscutting\DistribuicaoLucro.CrossCutting.csproj" />
+    <ProjectReference Include="..\..\src\distribuicao-lucro-repository\DistribuicaoLucro.Repository.csproj" />
+    <ProjectReference Include="..\..\src\distribuicao-lucro-service\DistribuicaoLucro.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="coverage\" />
+    <Folder Include="CrossCutting\" />
+    <Folder Include="Service\" />
+    <Folder Include="Repository\" />
+  </ItemGroup>
+
+</Project>

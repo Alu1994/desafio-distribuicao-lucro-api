@@ -7,7 +7,7 @@ namespace DistribuicaoLucro.Service.CalculoDistribuicaoLucroColaborador
     {
         private readonly double _salarioMinimo = 998.00;
 
-        public double CalcularBonusColaboradorAnual(Colaborador colaborador)
+        public virtual double CalcularBonusColaboradorAnual(Colaborador colaborador)
         {
             double salarioBruto = colaborador.salarioBruto;
             DateTime dataAdmissao = colaborador.dataAdmissao;
