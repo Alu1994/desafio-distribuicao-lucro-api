@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ApiExplorer" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="2.2.0" />
@@ -18,6 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\distribuicao-lucro-crosscutting\DistribuicaoLucro.CrossCutting.csproj" />
+    <ProjectReference Include="..\distribuicao-lucro-repository\DistribuicaoLucro.Repository.csproj" />
     <ProjectReference Include="..\distribuicao-lucro-service\DistribuicaoLucro.Service.csproj" />
   </ItemGroup>
 

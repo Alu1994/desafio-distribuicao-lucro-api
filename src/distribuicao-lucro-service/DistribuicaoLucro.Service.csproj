@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\distribuicao-lucro-crosscutting\DistribuicaoLucro.CrossCutting.csproj" />
     <ProjectReference Include="..\distribuicao-lucro-repository\DistribuicaoLucro.Repository.csproj" />
   </ItemGroup>
 
