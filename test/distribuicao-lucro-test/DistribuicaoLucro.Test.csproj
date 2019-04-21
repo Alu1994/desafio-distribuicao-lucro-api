@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <Folder Include="coverage\" />
-    <Folder Include="CrossCutting\ValueObject\" />
   </ItemGroup>
 
 </Project>

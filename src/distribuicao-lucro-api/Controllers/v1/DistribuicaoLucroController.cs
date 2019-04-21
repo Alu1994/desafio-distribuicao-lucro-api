@@ -1,7 +1,6 @@
 ﻿using System;
 using DistribuicaoLucro.CrossCutting;
 using DistribuicaoLucro.Service.CalculoDistribuicaoLucro;
-using DistribuicaoLucro.CrossCutting.ValueObject;
 using Microsoft.AspNetCore.Mvc;
 using DistribuicaoLucro.CrossCutting.Infra;
 using System.Net;
@@ -30,7 +29,7 @@ namespace DistribuicaoLucro.Api.Controllers
             try
             {
                 retornoApi.Retorno = _calculoDistribuicaoLucro.CalcularParticipacaoLucroColaboradores(valorTotalDisponibilizado);
-                retornoApi.Message = "Dados Gerados com sucesso!";
+                retornoApi.Message = "Dados gerados com sucesso!";
                 retornoApi.HttpStatus = HttpStatusCode.OK;
                 if(this.HttpContext != null)
                     this.HttpContext.Response.StatusCode = (int)HttpStatusCode.OK;

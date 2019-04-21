@@ -15,17 +15,14 @@ namespace DistribuicaoLucro.CrossCutting.ValueObject
 
         public int RetornarPesoTempoAdmissao()
         {
-            DateTime dataAtual = DateTime.Now;
+            DateTime dataAtual = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             if (dataAdmissao > dataAtual.AddYears(-1))
                 return 1;
             else if (dataAdmissao > dataAtual.AddYears(-3))
                 return 2;
             else if (dataAdmissao > dataAtual.AddYears(-8))
                 return 3;
-            else if (dataAdmissao < dataAtual.AddYears(-8))
-                return 5;
-
-            return 1;
+            return 5;
         }
 
         public int RetornarPesoAreaAtuacao()
@@ -44,10 +41,7 @@ namespace DistribuicaoLucro.CrossCutting.ValueObject
                 return 2;
             else if (pesoFaixaSalarial < 8)
                 return 3;
-            else if (pesoFaixaSalarial > 8)
-                return 5;
-
-            return 1;
+            return 5;
         }
     }
 }

@@ -22,11 +22,6 @@ namespace DistribuicaoLucro.CrossCutting.Extensions
             return null;
         }
 
-        public static string RetornarDescricaoPorEnum<T>(this Enum enumValue)
-        {
-            return (enumValue.GetType().GetCustomAttribute(typeof(DescriptionAttribute)) as DescriptionAttribute).Description;
-        }
-
         public static object RetornarDefaultValue<T>(this Enum enumValue)
         {
             Type genericEnumType = enumValue.GetType();

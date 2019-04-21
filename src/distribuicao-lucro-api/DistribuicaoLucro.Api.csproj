@@ -5,6 +5,8 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>DistribuicaoLucro.Api</RootNamespace>
     <AssemblyName>DistribuicaoLucro.Api</AssemblyName>
+    <Authors>Matthews</Authors>
+    <Company>XPTO Company</Company>
   </PropertyGroup>
 
   <ItemGroup>

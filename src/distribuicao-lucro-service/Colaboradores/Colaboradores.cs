@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using AutoMapper;
 using DistribuicaoLucro.CrossCutting.ValueObject;
 using DistribuicaoLucro.Repository.Colaboradores;

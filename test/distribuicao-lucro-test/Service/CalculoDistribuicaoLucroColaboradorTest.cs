@@ -1,11 +1,6 @@
-using DistribuicaoLucro.Api.Controllers;
 using DistribuicaoLucro.CrossCutting.ValueObject;
-using DistribuicaoLucro.Service.CalculoDistribuicaoLucro;
 using DistribuicaoLucro.Service.CalculoDistribuicaoLucroColaborador;
-using DistribuicaoLucro.Service.Colaboradores;
-using Moq;
 using System;
-using System.Collections.Generic;
 using Xunit;
 
 namespace DistribuicaoLucro.Test.Service
@@ -15,7 +10,19 @@ namespace DistribuicaoLucro.Test.Service
         [Fact]
         public void TestCalculoDistribuicaoLucroColaboradorTest()
         {
+            Colaborador colaborador = new Colaborador {
+                area = "Tecnologia",
+                cargo = "Desenvolvedor",
+                dataAdmissao = DateTime.Now.AddYears(-1),
+                matricula = "0120232",
+                nome = "Joseph",
+                salarioBruto = 4000.00
+            };
+            CalculoDistribuicaoLucroColaborador calculoDistribuicaoLucroColaboradorService = new CalculoDistribuicaoLucroColaborador();
 
+            double retornoCalculoDistribuicaoLucroColaboradorService = calculoDistribuicaoLucroColaboradorService.CalcularBonusColaboradorAnual(colaborador);
+
+            Assert.Equal(72000.00, retornoCalculoDistribuicaoLucroColaboradorService);
         }
     }
 }
