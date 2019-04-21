@@ -3,12 +3,12 @@ Este repositório tem por função realizar o desafio de criar uma api para dist
 
 Para criação dessa Api foi utilizado apenas uma rota, ela tem por função buscar na base de dados (Firebase) os dados dos colaboradores e fazer o cálculo de participação dos lucros para cada funcionário e com base em um valor informado calcular quanto a empresa terá de gastos e a distribuição para cada funcionário.
 
-**API - DistribuicaoLucro**
+### API - DistribuicaoLucro
 ```
 /api/v{version}/DistribuicaoLucro/{valorTotalDisponibilizado}
 ```
 
-**Executar**
+### Executar
 
 Para executar a api é necessário baixar o dotnet core 2.2
 
@@ -18,6 +18,8 @@ Depois da instalação, o repositório baixado e dentro da pasta api(desafio-dis
 ```
 dotnet run --project DistribuicaoLucro.Api.csproj
 ```
+
+### Testes
 
 Para a execução direta dos testes unitários é necessário estar na pasta (desafio-distribuicao-lucro-api\test\distribuicao-lucro-test), e então executar o comando abaixo:
 ```
