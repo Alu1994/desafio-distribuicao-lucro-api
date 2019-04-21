@@ -1,4 +1,11 @@
-# desafio-distribuicao-lucro-api
+# Distribuição de Lucros
+
+<p align="center">
+  <img src="https://statig3.akamaized.net/bancodeimagens/9m/r1/lb/9mr1lb1wujwo4drvo74g1bfku.jpg" />
+</p>
+
+### Resumo
+
 Este repositório tem por função realizar o desafio de criar uma api para distribuição de lucros da empresa XPTO para seus colaboradores.
 
 Para criação dessa Api foi utilizado apenas uma rota, ela tem por função buscar na base de dados (Firebase) os dados dos colaboradores e fazer o cálculo de participação dos lucros para cada funcionário e com base em um valor informado calcular quanto a empresa terá de gastos e a distribuição para cada funcionário.
